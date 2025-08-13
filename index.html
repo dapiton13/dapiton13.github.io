@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT 401 System Administration & Maintenance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-logo">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ubuntu-installation-boot-screen-6UgIqAfElqiLnQTCJQLLbrFvIXDfso.png" alt="Ubuntu Loading" class="ubuntu-boot-logo">
+      </div>
+      <div class="loading-text">Initializing System...</div>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-background"></div>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-section">
+          <div class="logo-icon">
+            <i class="fab fa-ubuntu"></i>
+          </div>
+          <div class="logo-text">
+            <h1>IT 401</h1>
+            <span class="subtitle">System Administration & Maintenance</span>
+          </div>
+        </div>
+        
+        <div class="header-actions">
+          <div class="search-container">
+            <div class="search-bar">
+              <input type="text" id="searchInput" placeholder="Search documentation...">
+              <button class="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+            <div class="search-suggestions" id="searchSuggestions"></div>
+          </div>
+          
+          <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home" data-section="home">
+              <i class="fas fa-home"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#week1" data-section="week1">
+              <i class="fas fa-calendar-week"></i>
+              <span>Week 1</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#progress" data-section="progress">
+              <i class="fas fa-chart-line"></i>
+              <span>Progress</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#resources" data-section="resources">
+              <i class="fas fa-book"></i>
+              <span>Resources</span>
+            </a>
+          </li>
+        </ul>
+        
+        <div class="progress-indicator">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Hero Section -->
+      <section id="home" class="hero-section">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Learning Journey</span>
+          </div>
+          <h2 class="hero-title">
+            Master System
+            <span class="highlight">Administration</span>
+            <span class="highlight">& Maintenance</span>
+          </h2>
+          <p class="hero-description">
+            Comprehensive documentation and resources for IT 401. Learn essential system administration skills, server management, and maintenance best practices through hands-on modules and real-world scenarios.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">12</div>
+              <div class="stat-label">MODULES</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">48</div>
+              <div class="stat-label">HOURS</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">156</div>
+              <div class="stat-label">RESOURCES</div>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="scrollToSection('week1')">
+              <i class="fas fa-rocket"></i>
+              Start Learning
+            </button>
+            <button class="btn btn-secondary" onclick="scrollToSection('progress')">
+              <i class="fas fa-chart-bar"></i>
+              View Progress
+            </button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="ubuntu-desktop-showcase">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ubuntu-default-desktop-nwgVMaz0gMUSkchLXVkOih84rwdbQc.png" alt="Ubuntu Desktop Environment" class="desktop-image">
+            <div class="desktop-overlay">
+              <div class="floating-elements">
+                <div class="floating-element" style="--delay: 0s">
+                  <i class="fab fa-ubuntu"></i>
+                </div>
+                <div class="floating-element" style="--delay: 0.5s">
+                  <i class="fab fa-github"></i>
+                </div>
+                <div class="floating-element" style="--delay: 1s">
+                  <i class="fas fa-terminal"></i>
+                </div>
+                <div class="floating-element" style="--delay: 1.5s">
+                  <i class="fas fa-server"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Week 1 Section -->
+      <section id="week1" class="content-section">
+        <div class="section-header">
+          <div class="section-badge">
+            <i class="fas fa-play-circle"></i>
+            <span>Week 1</span>
+          </div>
+          <h2 class="section-title">Core System Initialization</h2>
+          <p class="section-description">
+            Foundation week covering essential system setup, version control, and deployment tools
+          </p>
+        </div>
+
+        <!-- Terminal Commands Showcase -->
+        <div class="terminal-showcase">
+          <div class="terminal-header">
+            <div class="terminal-controls">
+              <span class="control close"></span>
+              <span class="control minimize"></span>
+              <span class="control maximize"></span>
+            </div>
+            <div class="terminal-title">ubuntu@system:~$</div>
+          </div>
+          <div class="terminal-content">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ubuntu-terminal-package-commands-PrVEnV2U4yhYPL9qY8gi0fOfrD8TYJ.png" alt="Ubuntu Terminal Commands" class="terminal-image">
+          </div>
+        </div>
+
+        <!-- Operation Summary Card -->
+        <div class="summary-card">
+          <div class="summary-header">
+            <h3>Operation Summary</h3>
+            <div class="summary-badge">Active</div>
+          </div>
+          <div class="summary-content">
+            <div class="summary-stats">
+              <div class="summary-stat">
+                <i class="fas fa-puzzle-piece"></i>
+                <div>
+                  <span class="stat-number">5</span>
+                  <span class="stat-label">Modules</span>
+                </div>
+              </div>
+              <div class="summary-stat">
+                <i class="fas fa-clock"></i>
+                <div>
+                  <span class="stat-number">5</span>
+                  <span class="stat-label">Hours</span>
+                </div>
+              </div>
+              <div class="summary-stat">
+                <i class="fas fa-calendar-day"></i>
+                <div>
+                  <span class="stat-number">2</span>
+                  <span class="stat-label">Days</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="operation-timeline">
+              <div class="timeline-item completed">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4>Day 1</h4>
+                  <p>System Overview, Ubuntu Core Deployment</p>
+                  <span class="timeline-duration">2 hours</span>
+                </div>
+              </div>
+              <div class="timeline-item completed">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4>Day 2</h4>
+                  <p>GitHub Matrix Setup, Bootable Drive Forge, Etcher Activation</p>
+                  <span class="timeline-duration">3 hours</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module Cards -->
+        <div class="modules-grid">
+          <div class="module-card" data-module="system-overview">
+            <div class="module-header">
+              <div class="module-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <div class="module-info">
+                <h3>System Overview</h3>
+                <span class="module-status completed">Completed</span>
+              </div>
+              <button class="module-toggle">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="module-content">
+              <p class="module-description">
+                Initialize your IT 401 mission, decoding the architecture of system administration. Explore operating system frameworks, network grids, security protocols, and maintenance algorithms through immersive labs and projects.
+              </p>
+              <div class="module-resources">
+                <h4>Resource Cache</h4>
+                <div class="resource-links">
+                  <a href="#" class="resource-link">
+                    <i class="fas fa-file-alt"></i>
+                    System Blueprint
+                  </a>
+                  <a href="#" class="resource-link">
+                    <i class="fas fa-archive"></i>
+                    Tech Archives
+                  </a>
+                </div>
+              </div>
+              <div class="module-outcomes">
+                <h4>Core Outputs</h4>
+                <ul>
+                  <li>Master mission objectives</li>
+                  <li>Internalize sysadmin protocols</li>
+                  <li>Prep for Linux operations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="module-card ubuntu-featured" data-module="ubuntu-deployment">
+            <div class="module-header">
+              <div class="module-icon">
+                <i class="fab fa-ubuntu"></i>
+              </div>
+              <div class="module-info">
+                <h3>Ubuntu Core Deployment</h3>
+                <span class="module-status completed">Completed</span>
+              </div>
+              <button class="module-toggle">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="module-content">
+              <div class="ubuntu-showcase">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ubuntu-installation-boot-screen-6UgIqAfElqiLnQTCJQLLbrFvIXDfso.png" alt="Ubuntu Installation" class="ubuntu-install-image">
+              </div>
+              <p class="module-description">
+                Deploy Ubuntu, a robust Debian-based Linux core. Master installation via bootable drives and execute commands like ls, cd, sudo apt update, and apt install. Benefit from its open-source matrix and global network support.
+              </p>
+              <div class="command-showcase">
+                <h4>Key Commands</h4>
+                <div class="command-list">
+                  <code class="command">sudo apt update</code>
+                  <code class="command">sudo apt install</code>
+                  <code class="command">ls -la</code>
+                  <code class="command">cd /path/to/directory</code>
+                </div>
+              </div>
+              <div class="module-resources">
+                <h4>Resource Cache</h4>
+                <div class="resource-links">
+                  <a href="#" class="resource-link">
+                    <i class="fab fa-ubuntu"></i>
+                    Ubuntu Core Download
+                  </a>
+                  <a href="#" class="resource-link">
+                    <i class="fas fa-terminal"></i>
+                    Command Codex
+                  </a>
+                </div>
+              </div>
+              <div class="module-outcomes">
+                <h4>Core Outputs</h4>
+                <ul>
+                  <li>Launch Ubuntu systems</li>
+                  <li>Navigate data structures</li>
+                  <li>Manage package ecosystems</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="module-card" data-module="github-setup">
+            <div class="module-header">
+              <div class="module-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="module-info">
+                <h3>GitHub Matrix Setup</h3>
+                <span class="module-status completed">Completed</span>
+              </div>
+              <button class="module-toggle">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="module-content">
+              <p class="module-description">
+                Construct a GitHub matrix to store mission logs and scripts. Master core operations: repository initialization, cloning, file integration, logging, and syncing. Optimize for version control and collaborative networks.
+              </p>
+              <div class="command-showcase">
+                <h4>Git Operations</h4>
+                <div class="command-list">
+                  <code class="command">git clone [repository]</code>
+                  <code class="command">git add .</code>
+                  <code class="command">git commit -m "message"</code>
+                  <code class="command">git push</code>
+                </div>
+              </div>
+              <div class="module-resources">
+                <h4>Resource Cache</h4>
+                <div class="resource-links">
+                  <a href="#" class="resource-link">
+                    <i class="fab fa-github"></i>
+                    GitHub Matrix
+                  </a>
+                  <a href="#" class="resource-link">
+                    <i class="fas fa-book"></i>
+                    Git Operations Manual
+                  </a>
+                </div>
+              </div>
+              <div class="module-outcomes">
+                <h4>Core Outputs</h4>
+                <ul>
+                  <li>Initialize matrices</li>
+                  <li>Control version streams</li>
+                  <li>Archive progress</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="module-card" data-module="bootable-drive">
+            <div class="module-header">
+              <div class="module-icon">
+                <i class="fas fa-usb"></i>
+              </div>
+              <div class="module-info">
+                <h3>Bootable Drive Forge</h3>
+                <span class="module-status completed">Completed</span>
+              </div>
+              <button class="module-toggle">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="module-content">
+              <p class="module-description">
+                Forge a bootable USB drive to deploy OS frameworks like Ubuntu. Process: acquire ISO data, select a USB conduit, and apply flashing protocols. Prioritize safety with data backups and ISO integrity checks via checksum algorithms.
+              </p>
+              <div class="process-steps">
+                <h4>Forge Process</h4>
+                <div class="steps-list">
+                  <div class="step">
+                    <span class="step-number">1</span>
+                    <span class="step-text">Acquire ISO data</span>
+                  </div>
+                  <div class="step">
+                    <span class="step-number">2</span>
+                    <span class="step-text">Select USB conduit</span>
+                  </div>
+                  <div class="step">
+                    <span class="step-number">3</span>
+                    <span class="step-text">Apply flashing protocols</span>
+                  </div>
+                  <div class="step">
+                    <span class="step-number">4</span>
+                    <span class="step-text">Verify integrity</span>
+                  </div>
+                </div>
+              </div>
+              <div class="module-resources">
+                <h4>Resource Cache</h4>
+                <div class="resource-links">
+                  <a href="#" class="resource-link">
+                    <i class="fas fa-compact-disc"></i>
+                    Ubuntu ISO Data
+                  </a>
+                  <a href="#" class="resource-link">
+                    <i class="fas fa-shield-alt"></i>
+                    Checksum Protocol Guide
+                  </a>
+                </div>
+              </div>
+              <div class="module-outcomes">
+                <h4>Core Outputs</h4>
+                <ul>
+                  <li>Craft bootable conduits</li>
+                  <li>Master BIOS/UEFI configurations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="module-card" data-module="etcher-activation">
+            <div class="module-header">
+              <div class="module-icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <div class="module-info">
+                <h3>Etcher Activation</h3>
+                <span class="module-status completed">Completed</span>
+              </div>
+              <button class="module-toggle">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="module-content">
+              <p class="module-description">
+                Activate Balena Etcher, a cross-platform tool for imprinting OS images onto USB drives or SD cards. Features a streamlined interface: select ISO, target drive, and execute flash. Includes validation protocols and multi-format support.
+              </p>
+              <div class="tool-features">
+                <h4>Etcher Features</h4>
+                <div class="features-grid">
+                  <div class="feature">
+                    <i class="fas fa-desktop"></i>
+                    <span>Cross-platform</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Validation protocols</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Multi-format support</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Fast flashing</span>
+                  </div>
+                </div>
+              </div>
+              <div class="module-resources">
+                <h4>Resource Cache</h4>
+                <div class="resource-links">
+                  <a href="#" class="resource-link">
+                    <i class="fas fa-download"></i>
+                    Balena Etcher Hub
+                  </a>
+                  <a href="#" class="resource-link">
+                    <i class="fas fa-play"></i>
+                    Activation Guide
+                  </a>
+                </div>
+              </div>
+              <div class="module-outcomes">
+                <h4>Core Outputs</h4>
+                <ul>
+                  <li>Execute secure image imprints</li>
+                  <li>Understand Etcher's role in OS deployment</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Progress Section -->
+      <section id="progress" class="content-section">
+        <div class="section-header">
+          <div class="section-badge">
+            <i class="fas fa-chart-line"></i>
+            <span>Analytics</span>
+          </div>
+          <h2 class="section-title">Learning Progress</h2>
+          <p class="section-description">
+            Track your advancement through the system administration curriculum
+          </p>
+        </div>
+
+        <div class="progress-dashboard">
+          <div class="progress-cards">
+            <div class="progress-card">
+              <div class="progress-card-header">
+                <h3>Weekly Hours</h3>
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="progress-card-content">
+                <canvas id="hoursChart"></canvas>
+              </div>
+            </div>
+            
+            <div class="progress-card">
+              <div class="progress-card-header">
+                <h3>Module Completion</h3>
+                <i class="fas fa-tasks"></i>
+              </div>
+              <div class="progress-card-content">
+                <div class="completion-stats">
+                  <div class="completion-circle">
+                    <svg class="progress-ring" width="120" height="120">
+                      <circle class="progress-ring-circle" stroke="#FFDEDE" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+                      <circle class="progress-ring-circle progress-ring-fill" stroke="#CF0F47" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" style="stroke-dasharray: 326.73; stroke-dashoffset: 0;"/>
+                    </svg>
+                    <div class="completion-text">
+                      <span class="completion-percentage">100%</span>
+                      <span class="completion-label">Complete</span>
+                    </div>
+                  </div>
+                  <div class="completion-details">
+                    <div class="completion-item">
+                      <span class="completion-count">5/5</span>
+                      <span class="completion-desc">Modules</span>
+                    </div>
+                    <div class="completion-item">
+                      <span class="completion-count">5/5</span>
+                      <span class="completion-desc">Hours</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resources Section -->
+      <section id="resources" class="content-section">
+        <div class="section-header">
+          <div class="section-badge">
+            <i class="fas fa-book"></i>
+            <span>Resources</span>
+          </div>
+          <h2 class="section-title">Additional Resources</h2>
+          <p class="section-description">
+            Supplementary materials and external references for deeper learning
+          </p>
+        </div>
+
+        <div class="resources-grid">
+          <div class="resource-category">
+            <h3>Documentation</h3>
+            <div class="resource-items">
+              <a href="#" class="resource-item">
+                <i class="fab fa-ubuntu"></i>
+                <span>Ubuntu Official Docs</span>
+              </a>
+              <a href="#" class="resource-item">
+                <i class="fab fa-github"></i>
+                <span>Git Documentation</span>
+              </a>
+              <a href="#" class="resource-item">
+                <i class="fas fa-terminal"></i>
+                <span>Linux Command Reference</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="resource-category">
+            <h3>Tools</h3>
+            <div class="resource-items">
+              <a href="#" class="resource-item">
+                <i class="fas fa-download"></i>
+                <span>Balena Etcher</span>
+              </a>
+              <a href="#" class="resource-item">
+                <i class="fas fa-code"></i>
+                <span>VS Code</span>
+              </a>
+              <a href="#" class="resource-item">
+                <i class="fas fa-terminal"></i>
+                <span>Windows Terminal</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="resource-category">
+            <h3>Learning</h3>
+            <div class="resource-items">
+              <a href="#" class="resource-item">
+                <i class="fas fa-video"></i>
+                <span>Video Tutorials</span>
+              </a>
+              <a href="#" class="resource-item">
+                <i class="fas fa-book-open"></i>
+                <span>Practice Labs</span>
+              </a>
+              <a href="#" class="resource-item">
+                <i class="fas fa-question-circle"></i>
+                <span>FAQ & Support</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <i class="fab fa-ubuntu"></i>
+            <span>IT 401</span>
+          </div>
+          <p class="footer-description">
+            Mastering system administration through hands-on learning and practical experience.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#week1">Week 1</a></li>
+            <li><a href="#progress">Progress</a></li>
+            <li><a href="#resources">Resources</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Video Tutorials</a></li>
+            <li><a href="#">Practice Labs</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 IT 401 System Administration & Maintenance | Crafted for Knowledge Excellence</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
